@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sign_in.css')}}">
+    <title>Sign In</title>
+</head>
+<body>
+    <div id="logo">
+        <img src="{{ url_for('static', filename='images/SandOfTime.png')}}" alt="">
+        <h1>Life Tracker</h1>
+    </div>
+    
+    <form method="post" action="/sign_in_data">
+        <label for="username">Username</label><br>
+        <input type="text" name="username" id="usernameInput"><br>
+        <label for="password">Password</label><br>
+        <input type="password" name="password" id="passwordInput"><br>
+        <button type="submit">Submit</button>
+        <a href="{{ url_for('sign_up_page')}}">Sign Up</a>
+    </form>
+    <footer>&copy; Copyright Life Tracker</footer>
+
+</body>
+</html>

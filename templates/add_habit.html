@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_habit.css')}}">
+</head>
+<body>
+    <header>
+        <div  id="logo" >
+            <img src="{{ url_for('static', filename='images/SandOfTime.png')}}" alt="">
+            <h1>Life Tracker</h1>
+        </div>
+       
+        <h2 id="user"> Welcome  {{ user_data }}<span id = 'status' data-status="{{ status }}"></span></h2>
+        <a href=" {{ url_for('home') }}" id="sign_out">Sign out</a>
+    </header>
+    <main>
+
+   
+        <p id="decription">Welcome to Life Tracker. This is a place were you can keep track of your habit. We only have 1 life to live so its best to choose which habit you want to work on.
+
+        </p>
+        <form method="post" action="/create_habit">
+            <label for="habit1">Habit 1</label><br>
+            <input placeholder="30 mins guitar practice" type="text" name="habit1" id="usernameInput"><br>
+            <label for="habit2">Habit 2</label><br>
+            <input placeholder="Spend time with family" type="text" name="habit2" id="passwordInput"><br>
+            <label for="habit3">Habit 3</label><br>
+            <input placeholder="Meditation" name="habit3" id="passwordInput"><br>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>&copy; Copyright Life Tracker</footer>
+    
+</body>
+</html>

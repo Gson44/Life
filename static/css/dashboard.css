@@ -1,0 +1,267 @@
+/* Select HTML element Start */
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: rgb(0, 22, 49);
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin-right: 20px;
+}
+
+input {
+    width: 400px;
+}
+/* Select HTML element End */
+
+/* -------------------------------------------------------- */
+
+/* Header Start */
+header {
+    position: relative;
+    top: 0;
+    left:0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: black;
+    justify-content: space-between;
+    width: 100%;
+   
+}
+#logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+}
+img {
+    margin-left: 20px;
+    margin-right: 20px;
+    height:75px;
+    width: 75px;  
+}
+
+#sign_out {
+    color:white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+#user {
+    width: 40%;
+}
+
+
+/* Header End */
+
+/* -------------------------------------------------------- */
+/* Main Content Start */
+.content-container {
+    display: flex;
+    justify-content: center; /* Horizontally center children */
+    align-items: center;
+    width: 100%;  /* Adjust based on requirements */
+    
+    position: relative;  /* Makes sure other items like dateContainer can be positioned with respect to it */
+}
+
+#dateContainer {
+    text-align: center;
+    position: absolute;  
+    top: 15%;  /* Adjusted value to position the date below the header */
+    left: 50%;
+    transform: translateX(-50%);  
+    z-index: 1;  
+}
+
+form {
+    flex: 1;
+    max-width:30%;  /* Adjust if needed */
+    height: 80%;  /* Makes sure the form has the same height as the habit tracker */
+    display: flex;  /* Makes sure content inside the form is centered */
+    flex-direction: column;
+    justify-content: space-between;
+    
+    
+    margin: auto;
+    text-align: center;
+  
+}
+#prediction_container > h1 {
+    position: relative;
+    bottom: 150px;
+    left: 35px;
+}
+
+main {
+    display: flex;
+    align-items: center;  /* Vertical alignment */
+    justify-content: space-between;  /* Adjusts the spacing between the form and the tracker */
+    height: 80vh;  /* Set height to viewport height */
+    padding: 0 5%;  /* Provides a bit of padding to the main content */
+}
+
+#btn {
+    padding: 15px;
+    border-radius: 10px;
+    border-collapse: collapse;
+    background-color: rgb(0, 18, 42);
+    color: white;
+    font-size: large;
+    
+}
+
+#btn:hover {
+    background-color: rgb(3, 26, 57);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap'); /* Futuristic font */
+
+li {
+    list-style: none;
+    margin: 50px;
+    border: none;
+    border-radius: 15px; /* Rounded corners */
+    width: 60%;
+    background: linear-gradient(135deg, rgb(10, 32, 70), rgb(0, 22, 49)); /* Gradient background */
+    box-shadow: 0 8px 15px rgb(0, 0, 0); /* Subtle shadow for depth */
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interactivity */
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    color: #EFEFEF; /* Light gray text color for better contrast */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row; 
+}
+
+.content-wrapper {
+    flex: 1; /* this makes the content-wrapper take up all available space, pushing the checkbox to the right */
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center; /* centers the checkbox vertically */
+}
+
+li:hover {
+    transform: translateY(-5px); /* Small upward movement on hover */
+    box-shadow: 0 12px 20px rgba(230, 230, 230, 0.2); /* Increased shadow depth on hover */
+}
+
+/* Hide the default checkbox appearance */
+.checkmark {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-left: 30px; /* Space between content and checkbox */
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+    border: 2px solid #EFEFEF; 
+    background-color: transparent;
+    cursor: pointer; /* Change cursor to hand icon for better UX */
+}
+
+/* Checked state appearance */
+.checkmark:checked::before {
+    content: '✔';
+    display: block;
+    font-size: 1.2em;
+    color: #EFEFEF;
+    text-align: center;
+    line-height: 18px; /* This should be roughly equal to width/height minus the border width */
+}
+
+
+li:hover .checkmark {
+    color: #3FA9F5;   /* Optional: change color on hover */
+}
+
+/* Main Content end*/
+
+/* -------------------------------------------------------- */
+
+/* Footer Start */
+footer {
+    color: white;
+    background-color: black;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+/* Footer End */
+
+
+/* -------------------------------------------------------- */
+
+/* Habit Tracker Enhancement */
+
+
+
+#habitTracker {
+    flex: 1;
+    max-width: 20%;  /* Adjust if needed, ensures the tracker doesn't grow too big */
+    height: 80%;  /* Makes sure the habit tracker has the same height as the form */
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(10, 32, 70);
+    box-shadow: 5px 5px black;
+    border-radius: 15px;
+    overflow-x: hidden;
+}
+#habitTracker > h1 {
+    margin-bottom: 30px;
+}
+
+.tracker-table {
+    display: grid;
+    grid-template-columns: 20px repeat(7, 1fr); /* 1 for days + 7 days in a week */
+    gap: 2px;
+    width: 100%; /* Ensuring the tracker takes the full width of its container */
+    max-height: 400px; /* This will limit the height of the tracker table */
+    overflow-y: auto; /* This will make the tracker scrollable if content exceeds the height */
+}
+
+.day-cell, .habit-cell {
+    border: 1px solid #EFEFEF;
+    padding: 2px; /* Further reduced padding for more concise cells */
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: #EFEFEF;
+    height: auto; /* Let the grid define the cell height */
+    font-size: 0.7em; /* Further adjusted font size */
+}
+
+
+.day-cell {
+    background-color: rgb(0, 22, 49); /* Light gray for day cells */
+    color: white; /* Font color to contrast the light gray background */
+    border: 1px solid rgb(10, 32, 70);
+}
+.habit-cell {
+    border: 1px solid rgb(10, 32, 70);
+}
+.habit-cell.completed {
+    background-color: #3FA9F5; /* A bluish tone that matches your hover color */
+}
+
+.habit-cell.not-completed {
+    background-color: rgb(0, 22, 49); /* Deep blue color from your color scheme */
+}
+
+.crossed-out:before {
+    content: "\2716";  /* Unicode character for a cross (X) */
+    position: absolute;
+    color: red;
+    font-size: 20px;  /* Adjust as necessary */
+}
+

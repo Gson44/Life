@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css')}}">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+    <header>
+        <div  id="logo" >
+            <img src="{{ url_for('static', filename='images/SandOfTime.png')}}" alt="">
+            <h1>Life Tracker</h1>
+        </div>
+       
+        <h2 id="user"> Welcome  {{ user_data }}<span id = 'habit' data-habit_data="{{ data }}"></span></h2>
+        <a href=" {{ url_for('home') }}" id="sign_out">Sign out</a>
+    </header>
+    
+    
+    <main>
+        <div id="dateContainer">
+            <h2>Today: <span id="time"></span></h2>
+        </div>
+        <div class="content-container">
+            <div id="habitTracker">
+                <h1>Monthly Habit Tracker</h1>
+                <div class="tracker-table">
+                    <!-- This will be populated by JavaScript -->
+                </div>
+            </div>
+            <form action="/send_habit" method="post">
+                <ul>
+                    <li>
+                        <div class="content-wrapper">{{ habit_data[0][6]}}</div>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" class="checkmark" name="habit1" value="checked">
+                        </label>
+                    </li>
+                    <li>
+                        <div class="content-wrapper">{{ habit_data[0][7]}}</div>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" class="checkmark" name="habit2" value="checked">
+                        </label>
+                    </li>
+                    <li>
+                        <div class="content-wrapper">{{ habit_data[0][8]}}</div>
+                        <label class="checkbox-wrapper">
+                            <input type="checkbox" class="checkmark" name="habit3" value="checked">
+                        </label>
+                    </li>
+                    <button type="submit" id="btn">Submit</button>
+                </ul>
+           </form>
+        <div id="prediction_container">
+            <h1>Prediction</h1>
+            <h3>{{ predict }}</h3>
+        </div>
+        </div>
+    </main>
+
+   
+    <footer>&copy; Copyright Life Tracker</footer>
+  
+ 
+    <script src="{{ url_for('static', filename='js/dashboard.js')}}"></script>
+    
+</body>
+</html>
