@@ -128,19 +128,31 @@ footer {
 
 /* -------------------------------------------------------- */
 @media (max-width: 600px){
-   
+    label{
+        font-size: 22px;
+    }
     input{
-        width: 17vh;
-        
-    }
-    label {
-        width: 100%;
-        
-    }
-    form {
-        padding:90px;
-        top:120px;
+        width: 25vh;
+        margin-right: 50px;
         position: relative;
-        padding-right: 135px;
+        right: 30px;
     }
+   
+    form {
+        position: relative;
+        padding: 30px 130px;
+        margin-top: 30px;
+        
+    }
+    #decription{
+        width: 75%;
+    } 
+    main {
+        margin-top: 20px;
+        height: 100%;
+    }
+    #user {
+        display: none;
+    }
+    
 }

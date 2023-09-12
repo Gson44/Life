@@ -71,18 +71,22 @@ img {
 
 @media (max-width: 600px){
    
+    label{
+        font-size: 22px;
+    }
     input{
-        width: 17vh;
-        
-    }
-    label {
-        width: 100%;
-        
-    }
-    form {
-        padding:90px;
-        top:120px;
+        width: 25vh;
+        margin-right: 50px;
         position: relative;
-        padding-right: 135px;
+        right: 30px;
+    }
+   
+    form {
+        position: relative;
+        padding: 30px 130px;
+        margin-bottom: 30px;
+    }
+    a {
+        font-size: small;
     }
 }
