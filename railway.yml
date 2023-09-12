@@ -1,0 +1,8 @@
+version: 1
+services:
+  - name: web
+    env:
+      - PORT: 3000
+    build:
+      dockerfile: Dockerfile
+  

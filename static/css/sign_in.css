@@ -23,6 +23,7 @@ form {
 }
 label {
     font-size: x-large;
+    width: 100%;
 }
 input {
     margin-bottom:30px;
@@ -41,6 +42,7 @@ button {
 a {
     color:white;
     margin-left: 20px;
+    width: 100%;
 }
 footer {
     color: white;
@@ -67,4 +69,19 @@ img {
     margin-right: 20px;
     height:75px;
     width: 75px;  
+}
+
+@media screen and (max-width: 600px){
+   
+    input{
+        width: 17vh;
+        
+    }
+    label {
+        width: 100%;
+        
+    }
+    form {
+        padding:90px;
+    }
 }
