@@ -83,5 +83,8 @@ img {
     }
     form {
         padding:90px;
+        top:120px;
+        position: relative;
+        padding-right: 135px;
     }
 }

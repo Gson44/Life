@@ -127,3 +127,20 @@ footer {
 
 
 /* -------------------------------------------------------- */
+@media (max-width: 600px){
+   
+    input{
+        width: 17vh;
+        
+    }
+    label {
+        width: 100%;
+        
+    }
+    form {
+        padding:90px;
+        top:120px;
+        position: relative;
+        padding-right: 135px;
+    }
+}
