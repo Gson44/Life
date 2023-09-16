@@ -11,7 +11,7 @@ from sklearn.metrics import accuracy_score
 app = Flask(__name__)
 
 # Use Railway's environment variables for MySQL
-
+"""
 app.config["MYSQL_HOST"] = os.environ.get("MYSQLHOST")
 app.config["MYSQL_USER"] = os.environ.get("MYSQLUSER")
 app.config["MYSQL_PASSWORD"] = os.environ.get("MYSQLPASSWORD")
@@ -22,7 +22,7 @@ app.config["MYSQL_HOST"] = 'localhost'
 app.config["MYSQL_USER"] = 'root'
 
 app.config["MYSQL_DB"] = 'life'
-"""
+
 
 app.config['SECRET_KEY'] = os.urandom(24)
 # Create mysql obkect
@@ -113,9 +113,10 @@ def dashboard():
                 habit_data_json = json.dumps(cleaned_habit_data)
                 
                 predict_habit = machine_learning_integration(user_id)
+                
                 result = display_result(predict_habit)
                 #print(result)
-                return render_template('dashboard.html', user_data=user_data[1], habit_data = habit_data, data=habit_data_json, status=user_data[4],predicti=result)
+                return render_template('dashboard.html', user_data=user_data[1], habit_data = habit_data, data=habit_data_json, status=user_data[4],prediction=result)
     return redirect(url_for("home"))
 
 
@@ -258,7 +259,7 @@ def machine_learning_integration(id):
         #print(f"Model Accuracy: {accuracy * 100:.2f}%")
         return prediction_for_next_day
     else:
-        return False
+        return "Require more data for prediction."
 
 def display_result(prediction):
     if prediction != False:
