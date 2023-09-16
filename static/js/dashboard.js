@@ -4,11 +4,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const habitDataElement = document.getElementById('habit');
     const habitDataRaw = habitDataElement.getAttribute('data-habit_data');
     const habitData = JSON.parse(habitDataRaw);
-
+    console.log(habitData)
     // Filter data for the current month
-    const currentMonth = new Date().getMonth();
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth();
+    console.log(currentDate)
     const filteredData = habitData.filter(entry => {
         const entryDate = new Date(entry[4]);
+        
         return entryDate.getMonth() === currentMonth;
     });
 
@@ -25,7 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const dayData = filteredData.find(entry => {
             const entryDate = new Date(entry[4]);
-            return entryDate.getDate() === day;
+            //console.log(entryDate.getDate())
+            //console.log(entryDate.getUTCDate())
+            //console.log(entryDate.getDate() +1)
+            return entryDate.getUTCDate() === day;
         });
 
         for (let habitNum = 0; habitNum < 3; habitNum++) {
@@ -45,8 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // For displaying today's date in the "Today: " section
-    const today = new Date();
-    const dateString = today.toLocaleDateString('en-US', {
+    const dateString = currentDate.toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
@@ -54,4 +59,3 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('time').textContent = dateString;
 
 });
-
