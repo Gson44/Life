@@ -11,7 +11,7 @@ from sklearn.metrics import accuracy_score
 app = Flask(__name__)
 
 # Use Railway's environment variables for MySQL
-"""
+
 app.config["MYSQL_HOST"] = os.environ.get("MYSQLHOST")
 app.config["MYSQL_USER"] = os.environ.get("MYSQLUSER")
 app.config["MYSQL_PASSWORD"] = os.environ.get("MYSQLPASSWORD")
@@ -22,7 +22,7 @@ app.config["MYSQL_HOST"] = 'localhost'
 app.config["MYSQL_USER"] = 'root'
 
 app.config["MYSQL_DB"] = 'life'
-
+"""
 
 app.config['SECRET_KEY'] = os.urandom(24)
 # Create mysql obkect
